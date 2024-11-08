@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reservation</title>
+    <style>
+        body{
+            border: 5px dotted black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function data()
+        {
+            var a=document.getElementById("name").value;
+            var b=document.getElementById('mobile').value;
+            var c=document.getElementById('Guests').value;
+            var d=document.getElementById('mail').value;
+            if(a=="" || b=="" || c=="")
+            {
+            alert('name ,mobile,Guests fields are mandatory');
+            return false;
+         }
+        else if(b.length<10||b.length>10){
+alert('number should be of 10 digits! please enter valid no.');
+return false;
+        }
+        else if(isNaN(b)){
+            alert('only Number allowed!please enter valid no.' );
+            return false;
+        }
+        else if(c!=d){
+            alert("Please enter same Password");
+            return false
+        }
+        else{
+            return true
+        }
+    }
+     
+    </script>
+    
+       <center> <h1 id="rh1">Reservation</h1></center>
+       <Form onsubmit="return data()" action="index.html">
+<fieldset>
+    <legend><h1>Form</h1></legend>
+    <label for='name'>Name</label>
+    <input type="text" id="name" placeholder="Name" name="customer name" required><br>Should in capital letters*<br><hr>
+    <label for="mail">Email:-</label>
+    <input type="text" id="mail" placeholder="email" name="customer mail"><br><hr>
+    <label for="adults">No of Guests:-</label>
+    <input type="number" id="Guests" placeholder="ex:5" name="Guests"><br><hr>
+    mobile: +91<input type="number" name="customer number" placeholder="number" required id="mobil"><br><hr>
+    Any special request:<br>
+    <textarea name="my text" rows="5" cols="50"></textarea><br><hr>
+    date:- <input type="date" name="my date">
+    time:-<input type="time" name="foam time"><br><hr>
+    Advance Rs.500 required for booking table, make payment and share screenshot<br><img src="qr.jpg" height="200px" width="200px"> <br>
+    <input type="file" name="myfile" ><br><hr>
+    <input type="submit" value="submit now">&nbsp;
+
+    <input type="reset" value="reset foam">
+</fieldset>
+<Form>
+</body>
+</html>
